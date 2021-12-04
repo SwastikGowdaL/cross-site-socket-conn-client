@@ -14,9 +14,9 @@ app.use(express.static(publicDirectoryPath));
 const server = http.createServer(app);
 const io = socketio(server);
 
-// io.on("connection",(socket)=>{
-//     socket.emit("test","hai");
-// })
+io.on("connection",(socket)=>{
+    socket.emit("testing","hello from client socket conn");
+})
 
 server.listen(8000,()=>{
     console.log("client at port 8000"); 
